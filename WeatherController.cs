@@ -21,7 +21,7 @@ namespace OpenWeatherMapApi
         public WeatherController(string apiKey)
         {
             if (string.IsNullOrWhiteSpace(apiKey))
-                throw new ArgumentNullException("Api ключ не может быть пустым.", nameof(apiKey));
+                throw new ArgumentNullException(nameof(apiKey), "Api ключ не может быть пустым.");
 
             ApiKey = apiKey;
         }

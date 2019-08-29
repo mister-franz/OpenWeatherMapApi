@@ -49,17 +49,17 @@ namespace OpenWeatherMapApi
         public Weather(string city, int temperature, int pressure, int humidity, int visibility, double windSpeed, int clouds)
         {
             if (string.IsNullOrWhiteSpace(city))
-                throw new ArgumentNullException("Название города не может быть пустым.", nameof(city));
+                throw new ArgumentNullException(nameof(city), "Название города не может быть пустым.");
             if (temperature > 100 || temperature < 100)
-                throw new ArgumentException("Некорректная температура.", nameof(temperature));
+                throw new ArgumentException(nameof(temperature), "Некорректная температура.");
             if (pressure < 0)
-                throw new ArgumentException("Некорректное давление.", nameof(pressure));
+                throw new ArgumentException(nameof(pressure), "Некорректное давление.");
             if (humidity < 0)
-                throw new ArgumentException("Некорректная влажность.", nameof(humidity));
+                throw new ArgumentException(nameof(humidity), "Некорректная влажность.");
             if (visibility < 0)
-                throw new ArgumentException("Некорректная видимость.");
+                throw new ArgumentException(nameof(visibility), "Некорректная видимость.");
             if (clouds < 0)
-                throw new ArgumentException("Некорректная облачность.");
+                throw new ArgumentException(nameof(clouds), "Некорректная облачность.");
 
             City = city;
             Temperature = temperature;
@@ -79,11 +79,11 @@ namespace OpenWeatherMapApi
         public Weather(string city, int temperature, int clouds)
         {
             if (string.IsNullOrWhiteSpace(city))
-                throw new ArgumentNullException("Название города не может быть пустым.", nameof(city));
+                throw new ArgumentNullException(nameof(city), "Название города не может быть пустым.");
             if (temperature > 100 || temperature < 100)
-                throw new ArgumentException("Некорректная температура.", nameof(temperature));
+                throw new ArgumentException(nameof(temperature), "Некорректная температура.");
             if (clouds < 0)
-                throw new ArgumentException("Некорректная облачность.", nameof(clouds));
+                throw new ArgumentException(nameof(clouds), "Некорректная облачность.");
 
             City = city;
             Temperature = temperature;

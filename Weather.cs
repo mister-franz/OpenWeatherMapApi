@@ -51,15 +51,15 @@ namespace OpenWeatherMapApi
             if (string.IsNullOrWhiteSpace(city))
                 throw new ArgumentNullException(nameof(city), "Название города не может быть пустым.");
             if (temperature > 100 || temperature < 100)
-                throw new ArgumentException(nameof(temperature), "Некорректная температура.");
+                throw new ArgumentException("Некорректная температура.", nameof(temperature));
             if (pressure < 0)
-                throw new ArgumentException(nameof(pressure), "Некорректное давление.");
+                throw new ArgumentException("Некорректное давление.", nameof(pressure));
             if (humidity < 0)
-                throw new ArgumentException(nameof(humidity), "Некорректная влажность.");
+                throw new ArgumentException("Некорректная влажность.", nameof(humidity));
             if (visibility < 0)
-                throw new ArgumentException(nameof(visibility), "Некорректная видимость.");
+                throw new ArgumentException("Некорректная видимость.", nameof(visibility));
             if (clouds < 0)
-                throw new ArgumentException(nameof(clouds), "Некорректная облачность.");
+                throw new ArgumentException("Некорректная облачность.", nameof(clouds));
 
             City = city;
             Temperature = temperature;
@@ -81,9 +81,9 @@ namespace OpenWeatherMapApi
             if (string.IsNullOrWhiteSpace(city))
                 throw new ArgumentNullException(nameof(city), "Название города не может быть пустым.");
             if (temperature > 100 || temperature < 100)
-                throw new ArgumentException(nameof(temperature), "Некорректная температура.");
+                throw new ArgumentException("Некорректная температура.", nameof(temperature));
             if (clouds < 0)
-                throw new ArgumentException(nameof(clouds), "Некорректная облачность.");
+                throw new ArgumentException("Некорректная облачность.", nameof(clouds));
 
             City = city;
             Temperature = temperature;
